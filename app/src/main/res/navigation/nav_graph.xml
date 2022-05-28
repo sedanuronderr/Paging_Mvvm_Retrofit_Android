@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/remoteJobFragment">
+    <fragment
+        android:id="@+id/remoteJobFragment"
+        android:name="com.seda.remotejob.Fragments.RemoteJobFragment"
+        android:label="fragment_remote_job"
+        tools:layout="@layout/fragment_remote_job" >
+        <action
+            android:id="@+id/action_remoteJobFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_remoteJobFragment_to_saveFragment"
+            app:destination="@id/saveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.seda.remotejob.Fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_remoteJobFragment"
+            app:destination="@id/remoteJobFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_saveFragment"
+            app:destination="@id/saveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveFragment"
+        android:name="com.seda.remotejob.Fragments.SaveFragment"
+        android:label="fragment_save"
+        tools:layout="@layout/fragment_save" >
+        <argument
+            android:name="jobb"
+            app:argType="com.seda.remotejob.model.Result" />
+    </fragment>
+</navigation>
